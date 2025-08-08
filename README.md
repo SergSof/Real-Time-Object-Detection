@@ -44,19 +44,19 @@ pip install -r requirements.txt
 Для использования внутренней камеры (например, камеры с индексом 0, 1 или 2), выполните следующую команду:
 
 ```bash
-python main.py 0
+python main2.py 0
 ```
 
 или
 
 ```bash
-python main.py 1
+python main2.py 1
 ```
 
 или
 
 ```bash
-python main.py 2
+python main2.py 2
 ```
 
 ### 2. Получение видео-потока по IP адресу
@@ -65,13 +65,13 @@ python main.py 2
 (замените IP адрес на свой)
 
 ```bash
-python main.py http://192.168.1.100:8080/video
+python main2.py http://192.168.1.100:8080/video
 ```
 
 или
 
 ```bash
-python main.py rtsp://192.168.1.100:8080/video
+python main2.py rtsp://192.168.1.100:8080/video
 ```
 
 ### 3. Получение видео-потока из файла
@@ -79,7 +79,7 @@ python main.py rtsp://192.168.1.100:8080/video
 Для получения видео-потока из файла, укажите в качестве аргумента, путь к видео-файлу, например:
 
 ```bash
-python main.py C:\Users\Lenovo\OneDrive\Desktop\project_real_camera\video.mp4
+python main2.py C:\Users\Lenovo\OneDrive\Desktop\project_real_camera\video.mp4
 ```
 Если путь содержит кириллицу, пробелы или другие недопустимые символы, необходимо взять в кавычки:
 "C:\Users\Lenovo\OneDrive\Рабочий стол\project_real_camera\video.mp4"
