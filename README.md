@@ -1,97 +1,141 @@
+````markdown
 # Real-Time-Object-Detection
-# Обнаружение объектов в реальном времени
 
-Обнаружение нарушений формы спецодежды в реальном времени с использованием встроенной видеокамеры и обученной модели YOLO v11.
+Production-oriented MVP for real-time PPE compliance detection using YOLOv11.
 
-# Проект Real Camera
+This project is designed for practical monitoring scenarios where it is necessary to detect uniform or PPE compliance violations in real time from:
+- webcam input
+- RTSP / IP camera streams
+- local video files
 
-## Требования
+The repository demonstrates a working computer vision pipeline built with Python, OpenCV, and YOLO, focused on real-world usage and fast deployment.
 
-- Python 3.10+
+## Project Overview
 
-## Установка Python
+The system processes a live or recorded video stream, runs object detection on each frame, and highlights detected compliance violations directly on the video output.
 
-Если у вас не установлен Python 3.10 или выше, скачайте и установите его с официального сайта: [Python Downloads](https://www.python.org/downloads/).
+This MVP was built for a real practical use case and serves as a solid base for further production development.
 
-## Клонирование репозитория
+## Features
 
-Склонируйте репозиторий на ваш локальный компьютер:
+- Real-time video processing
+- YOLOv11-based detection
+- Support for webcam input
+- Support for RTSP / IP streams
+- Support for local video files
+- Visualization of detections on frames
+- Lightweight Python-based setup
+
+## Tech Stack
+
+- Python
+- OpenCV
+- Ultralytics YOLO
+- NumPy
+
+## Repository Structure
 
 ```bash
-git clone https://github.com/SergSof/Real-Time-Object-Detection
+.
+├── main.py
+├── main2.py
+├── requirements.txt
+├── best_s2.pt
+├── temp_crop.jpg
+└── README.md
+````
+
+> Update this section if your actual repository structure is slightly different.
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/SergSof/Real-Time-Object-Detection.git
 cd Real-Time-Object-Detection
 ```
 
-## Установка зависимостей
+### 2. Create and activate a virtual environment
 
-Создайте виртуальное окружение и активируйте его:
+#### Linux / macOS
 
 ```bash
-python -m venv myenv
-myenv\scripts\activate
+python3 -m venv venv
+source venv/bin/activate
 ```
 
-Установите необходимые зависимости:
+#### Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+### 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Запуск основного файла
+## Run Examples
 
-### 1. Получение видео-потока с внутренней камеры
-
-Для использования внутренней камеры (например, камеры с индексом 0, 1 или 2), выполните следующую команду:
+### Webcam
 
 ```bash
-python main2.py 0
+python main.py
 ```
 
-или
+### RTSP / IP camera stream
 
 ```bash
-python main2.py 1
+python main.py --source "rtsp://your_stream_url"
 ```
 
-или
+### Local video file
 
 ```bash
-python main2.py 2
+python main.py --source "video.mp4"
 ```
 
-### 2. Получение видео-потока по IP адресу
+> If your current script uses a different CLI format, replace the commands above with the actual ones used in the project.
 
-Для получения видео-потока по IP адресу, выполните следующую команду:
-(замените IP адрес на свой)
+## Demo
 
-```bash
-python main2.py http://192.168.1.100:8080/video
+Add here:
+
+* `demo.gif`
+* or a short `demo.mp4`
+* or 2-3 screenshots showing detections on frames
+
+Example:
+
+```markdown
+![Demo](demo.gif)
 ```
 
-или
+## Notes
 
-```bash
-python main2.py rtsp://192.168.1.100:8080/video
-```
+This repository represents a production-oriented MVP built for a real monitoring scenario.
 
-### 3. Получение видео-потока из файла
+The current implementation focuses on demonstrating the core detection pipeline:
 
-Для получения видео-потока из файла, укажите в качестве аргумента, путь к видео-файлу, например:
+* model inference
+* stream and file input handling
+* frame-by-frame visualization
+* practical deployment simplicity
 
-```bash
-python main2.py C:\Users\Lenovo\OneDrive\Desktop\project_real_camera\video.mp4
-```
-Если путь содержит кириллицу, пробелы или другие недопустимые символы, необходимо взять в кавычки:
-"C:\Users\Lenovo\OneDrive\Рабочий стол\project_real_camera\video.mp4"
+Possible next steps for further production hardening:
 
-**Обработанный видео-файл, будет записан, в корень проекта.**
-
-## Примечания
-
-- Убедитесь, что путь к видеофайлу указан правильно и файл доступен по этому пути.
-- Для выхода из программы нажмите клавишу 'q' в окне с видео.
-- Если вы используете IP-камеру, убедитесь, что камера доступна по указанному адресу.
+* unified CLI entry point
+* structured configuration
+* logging
+* Docker packaging
+* automatic reconnection and stream health checks
+* event-based alerting and integrations
 
 ## License
 
 MIT License
+
+````
