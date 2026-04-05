@@ -95,18 +95,6 @@ python main.py --source "rtsp://your_stream_url"
 python main.py --source "video.mp4"
 ```
 
-## Demo
-
-Add here:
-
-* `demo.gif`
-* or a short `demo.mp4`
-* or 2-3 screenshots showing detections on frames
-
-Example:
-
-![Demo](demo.gif)
-
 ## Notes
 
 This repository represents a production-oriented MVP built for a real monitoring scenario.
