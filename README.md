@@ -1,4 +1,3 @@
-````markdown
 # Real-Time-Object-Detection
 
 Production-oriented MVP for real-time PPE compliance detection using YOLOv11.
@@ -43,9 +42,7 @@ This MVP was built for a real practical use case and serves as a solid base for 
 ├── best_s2.pt
 ├── temp_crop.jpg
 └── README.md
-````
-
-> Update this section if your actual repository structure is slightly different.
+```
 
 ## Installation
 
@@ -98,8 +95,6 @@ python main.py --source "rtsp://your_stream_url"
 python main.py --source "video.mp4"
 ```
 
-> If your current script uses a different CLI format, replace the commands above with the actual ones used in the project.
-
 ## Demo
 
 Add here:
@@ -110,9 +105,7 @@ Add here:
 
 Example:
 
-```markdown
 ![Demo](demo.gif)
-```
 
 ## Notes
 
@@ -137,5 +130,3 @@ Possible next steps for further production hardening:
 ## License
 
 MIT License
-
-````
